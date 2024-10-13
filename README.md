@@ -1,75 +1,4 @@
-# Library API Take-Home Exercise (Backend)
-
-## Instructions
-
-Your task is to create an API for a simple book management system that allows users to manage information about authors and the books they have written. This exercise is intentionally open-ended, and you are welcome to implement your solution using the language and tech stack of your choice. The core functionality of the application should be expressed through your own original code.
-
-You should aim to spend no more than 2 hours on this project. If you don't complete everything in 2 hours, please submit what you have - we value your time and want to see your prioritization skills.
-
-### Application Description
-
-Implement an API that allows users to perform CRUD (Create, Read, Update, Delete) operations on authors and books. Each author should have the following properties:
-
-```
-- name
-- bio
-```
-
-Each book should have the following properties:
-
-```
-- title
-- description
-- author
-- published date
-```
-
-The API should support the following operations:
-
-1. Create a new author
-2. Retrieve a list of all authors
-3. Retrieve a specific author by ID
-4. Update an author
-5. Delete an author
-6. Create a new book
-7. Retrieve a list of all books
-8. Retrieve a specific book by ID
-9. Update a book
-10. Delete a book
-
-### Minimum Requirements
-
--   Implement all CRUD operations for authors and books
--   Use appropriate HTTP methods and status codes
--   Implement basic input validation
--   Authors and books do not need to persist across server shutdown/startup (i.e., setting up a DB isn't necessary - server memory should suffice)
--   Provide clear API documentation (can be in the README)
-
-> Note: There is no need to implement any form of authentication or authorization for this exercise
-
-If you have additional time, consider spending it on testing, error handling, or implementing more advanced features like searching, sorting, or filtering.
-
-## Evaluation Criteria
-
-We will be evaluating your submission based on the following:
-
-1. Functionality: Does the API work as described?
-2. Code quality: Is the code clean, well-organized, and following best practices?
-3. API design: Are the endpoints intuitive?
-4. Data modeling: How well are the relationships between authors and books represented?
-5. Error handling: How does the application handle invalid inputs or errors?
-6. Technical choices: Are the chosen technologies appropriate for the task?
-7. Documentation: Is the code well-commented and the README clear?
-
-## Deliverables
-
-Please fill out the sections below in the _README.md_ of your project and submit according to the instructions you received with this project. Your code can be sent as a zip file or a link to a repository containing your project.
-
----
-
 ## Implementation Details
-
-<!-- Provide a short description of your implementation (technologies used, brief overview of project architecture, etc.) -->
 
 For this library application, I used Java w/ Spring Boot, as well as JPA, which facilitates persisting data to an H2 database. JPA provides annotations that allow for input validation as well as interaction with the underlying database. It provides basic CRUD methods as well as the ability to customize your own depending on the fields in classes marked with the @Entity annotation.
 
@@ -84,9 +13,6 @@ For example:
 
 ## How to Run
 
-<!--
-- Include instructions on how to run your implementation locally. Be sure to include any necessary setup steps, such as installing dependencies, as well as the commands to start the application.
--->
 I've containerized this application and pushed it to DockerHub. I figured this would be the simplest way. Ensure that Docker is installed beforehand:
 1. Run this command to pull the image: `docker pull fmajorcminor/library-api-app`
 2. Run this command to create a container with the pulled image: `docker run -p 8080:8080 fmajorcminor/library-api-app`
@@ -96,16 +22,6 @@ I've containerized this application and pushed it to DockerHub. I figured this w
 5. Open up Postman and let loose!
 
 ## API Documentation
-
-<!--
-- Provide clear documentation for your API endpoints, including:
-  - HTTP method
-  - URL
-  - Request parameters (if any)
-  - Request body format (if applicable)
-  - Response format
-  - Example curl commands or Postman collection (optional but appreciated)
--->
 
 1. POST localhost:8080/api/v1/books (add book)
     - Example Request Body: {
@@ -242,16 +158,9 @@ I've containerized this application and pushed it to DockerHub. I figured this w
 
 ## Testing
 
-<!-- Describe how you tested your solution (automated testing, manual testing process, etc.) -->
-
 Testing done for this project was all done manually through postman and the H2 database. Given more time, I would have liked to set up JUnit tests. I also would have liked to set up Swagger-UI so that I could have a centralized place to test APIs and provide documentation.
 
 ## Tools Used
-
-<!--
-- Describe any tools you used in developing your solution (e.g. ChatGPT for generating ideas)
-- Note: The use of AI tools is not discouraged, but they should be used judiciously.
--->
 
 The tools used in my solution were the following:
 - Java 17
@@ -264,4 +173,4 @@ The tools used in my solution were the following:
   - Setting up the Dockerfile
   - Assisting me when I ran into bugs, e.g., database persistance failing due to misconfigurations, missing annotations on entity classes
 - Google for searching documentation and when running into unknown errors
-- All of the development work was done by me. I was the pilot and ChatGPT acted as co-pilot from time to time, as I normally use it during my current full-time job.
+- All of the development and design work was done by me. I was the pilot and ChatGPT acted as co-pilot from time to time, as I normally use it during my current full-time job.
