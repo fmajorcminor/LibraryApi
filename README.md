@@ -87,6 +87,13 @@ For example:
 <!--
 - Include instructions on how to run your implementation locally. Be sure to include any necessary setup steps, such as installing dependencies, as well as the commands to start the application.
 -->
+I've containerized this application and pushed it to DockerHub. I figured this would be the simplest way. Ensure that Docker is installed beforehand:
+1. Run this command to pull the image: `docker pull fmajorcminor/library-api-app`
+2. Run this command to create a container with the pulled image: `docker run -p 8080:8080 fmajorcminor/library-api-app`
+3. Navigate here to view the H2 database: http://localhost:8080/h2-ui
+    - Ensure that the configs look like this. The password is 'test': ![screenshot](H2Screenshot.png)
+4. Click 'connect'
+5. Open up Postman and let loose!
 
 ## API Documentation
 
