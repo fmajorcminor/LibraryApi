@@ -180,7 +180,6 @@ For example:
       }
 
 5. DELETE localhost:8080/api/v1/books/2 (delete book by id)
-
     - Path variable: bookId
 
 6. POST localhost:8080/api/v1/authors (create author)
@@ -231,11 +230,14 @@ For example:
 }
 10. DELETE localhost:8080/api/v1/authors/1 (delete author by id)
     - Path variable: authorId
+    - Will also delete books associated with author
 
 
 ## Testing
 
 <!-- Describe how you tested your solution (automated testing, manual testing process, etc.) -->
+
+Testing done for this project was all done manually through postman and the H2 database. Given more time, I would have liked to set up JUnit tests. I also would have liked to set up Swagger-UI so that I could have a centralized place to test APIs and provide documentation.
 
 ## Tools Used
 
@@ -244,6 +246,15 @@ For example:
 - Note: The use of AI tools is not discouraged, but they should be used judiciously.
 -->
 
----
-
-Good luck, and we look forward to reviewing your submission!
+The tools used in my solution were the following:
+- Java 17
+- Spring Boot
+- JPA
+- H2 DB
+- Postman for testing requests
+- Docker to containerize the application
+- ChatGPT was used from time to time for things such as 
+  - Setting up the Dockerfile
+  - Assisting me when I ran into bugs, e.g., database persistance failing due to misconfigurations, missing annotations on entity classes
+- Google for searching documentation and when running into unknown errors
+- All of the development work was done by me. I was the pilot and ChatGPT acted as co-pilot from time to time, as I normally use it during my current full-time job.
